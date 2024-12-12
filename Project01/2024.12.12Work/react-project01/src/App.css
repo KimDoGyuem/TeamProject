@@ -1,0 +1,49 @@
+#company_site{
+    height: 100vh;
+}
+#main_top_box{
+    background-color: rgb(255, 146, 146);
+    display: flex;
+}
+#main_middle_box{
+    background-color: rgb(168, 220, 100);
+    display: flex;
+}
+#main_bottom_box{
+    background-color: rgb(100, 172, 220);
+    display: flex;
+    justify-content: center; 
+    /* align-items: center; */
+    padding: 5px;
+    height: 100vh;
+}
+#company_logo{
+    width: 300px;
+    height: 100px;
+    background-color: rgb(112, 188, 255);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin: 5px;
+}
+.login_button{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+#organization_chart_button{
+    position: relative;
+}
+#project_history_button{
+    position: relative;
+}
+#login_box{
+    background-color: rgb(255, 255, 255);
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
