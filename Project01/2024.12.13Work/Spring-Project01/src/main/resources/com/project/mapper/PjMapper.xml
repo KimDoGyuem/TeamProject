@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.PjMapper">
+	
+	<select id="login" resultType="int">
+		SELECT count(*) from company_member where company_id = #{company_id} and password = #{password}
+	</select>
+
+	<select id="loginInfo" resultType="com.project.dto.LoginDto">
+		SELECT * from company_member where company_id = #{company_id} and password = #{password}
+	</select>
+	
+	<insert id="addProject">
+		INSERT into project_list(project_name,project_content,project_period) values(#{project_name}, #{project_content}, #{project_period})
+	</insert>
+	
+	<select id="getProjectList" resultType="com.project.dto.ProjectManagementDto">
+		SELECT * from project_list
+	</select>
+	
+	<delete id="endProject">
+		DELETE from project_list where project_name = #{name}
+	</delete>
+	
+	<select id="getEmployeeList" resultType="com.project.dto.LoginDto">
+		SELECT * from company_member
+	</select>
+</mapper>	

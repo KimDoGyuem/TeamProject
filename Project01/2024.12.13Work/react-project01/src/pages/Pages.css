@@ -1,0 +1,33 @@
+#login_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 여기까지 LoginPage.js */
+#project_management_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+}
+
+.pj_input {
+    width: 500px;
+}
+
+/* 여기까지 ProjectManagement.js */
+#employee_management_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+}
+
+#employee_list_area {
+    display: flex;
+    height: 150px;
+    padding: 4px;
+    border: 4px solid gray;
+}
+
+/* 여기까지 EmployeeManagement.js */

@@ -1,0 +1,67 @@
+#company_site{
+    height: 100vh;
+}
+#main_top_box{
+    background-color: rgb(255, 146, 146);
+    display: flex;
+}
+#main_middle_box{
+    background-color: rgb(168, 220, 100);
+    display: flex;
+}
+#main_bottom_box{
+    background-color: rgb(100, 172, 220);
+    display: flex;
+    justify-content: center; 
+    padding: 5px;
+    height: 100vh;
+}
+#company_logo{
+    width: 300px;
+    height: 100px;
+    background-color: rgb(112, 188, 255);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin: 5px;
+}
+#login_box{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    right: 10px;
+    width: 150px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+/* 여기까지 App.js */
+.employee_nformation{
+  background-size: cover; /* 비율에 맞춰 영역을 꽉 채웁니다 */
+  background-position: center; /* 이미지를 중앙에 위치 */
+  background-repeat: no-repeat; /* 반복하지 않음 */  
+  width:100px;
+  height:120px;
+  margin: 1px;
+}
+.사원01, .사원02, .사원03, .사원04, .사원05, .사원06, .사원07, .사원08, .사원09, .사원10{
+    background-image: url('bell1.jpg');
+    border: 4px solid rgb(35, 173, 211);  
+}
+.사장{
+    background-image: url('bell2.jpg');
+    border: 4px solid rgb(38, 35, 211);  
+}
+/* 여기까지 EmployeeInformation.js */
+#project_member_area{
+    display: flex;
+    height: 150px;
+    padding: 4px;
+    border: 4px solid gray;
+}
+/* 여기까지 ProjectList.js */
