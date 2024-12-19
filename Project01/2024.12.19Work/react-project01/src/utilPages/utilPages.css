@@ -1,0 +1,73 @@
+.employee_information{
+    position: relative;
+    background-size: cover; /* 비율에 맞춰 영역을 꽉 채웁니다 */
+    background-position: center; /* 이미지를 중앙에 위치 */
+    background-repeat: no-repeat; /* 반복하지 않음 */  
+    width:100px;
+    height:120px;
+    margin: 1px;
+  }
+  #info{
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+      background-color: rgba(255, 216, 174, 0.8);
+      font-size: 12px;
+  }
+  .사원01, .사원02, .사원03, .사원04, .사원05, .사원06, .사원07, .사원08, .사원09, .사원10{
+      background-image: url('bell1.jpg');
+      border: 4px solid rgb(35, 173, 211);  
+  }
+  .사장{
+      background-image: url('bell2.jpg');
+      border: 4px solid rgb(38, 35, 211);  
+  }
+  /* 여기까지 EmployeeInformation.js */
+  #project_member_area{
+      display: flex;
+      height: 140px;
+      padding: 3px;
+      border: 4px solid gray;
+  }
+  /* 여기까지 ProjectList.js */
+  .employee_popup_menu{
+      position: absolute;
+      border: 3px solid #07f3b8;
+      background-color: #fcb3ff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+  }
+  .employee_popup_menu button{
+      display: block;
+      width: 100%;
+      margin: 5px 0;
+      padding: 5px 10px;
+      border: none;
+      background-color: #b085bb;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+  }
+  .employee_popup_menu button:hover{
+      background-color: #945ba2;
+  }
+  .employee_popup_menu select{
+      display: block;
+      margin: 5px 0;
+      padding: 5px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+  }
+  /* 여기까지 EmployeePopup.js */
+  #depart_mentMember_area{
+      display: flex;
+      height: 140px;
+      padding: 3px;
+      border: 4px solid gray;
+      width: 1200px;
+      margin: 2px;
+  }
+  /* 여기까지 DepartmentMember.js */
