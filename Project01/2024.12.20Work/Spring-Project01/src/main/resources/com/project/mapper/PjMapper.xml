@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.PjMapper">
+	
+	<select id="login" resultType="int">
+		SELECT count(*) from company_member where company_id = #{company_id} and password = #{password}
+	</select>
+
+	<select id="loginInfo" resultType="com.project.dto.LoginDto">
+		SELECT * from company_member where company_id = #{company_id} and password = #{password}
+	</select>
+	
+	<insert id="addProject">
+		INSERT into project_list(project_name,project_content,project_period) values(#{project_name}, #{project_content}, #{project_period})
+	</insert>
+	
+	<select id="getProjectList" resultType="com.project.dto.ProjectManagementDto">
+		SELECT * from project_list
+	</select>
+	
+	<select id="getProjectMemberlist" resultType="com.project.dto.ProjectMemberDto">
+		SELECT * from project_member_list
+	</select>
+	
+	<delete id="endProject1">
+		DELETE from project_list where no = #{no}
+	</delete>
+	
+	<delete id="endProject2">
+		DELETE from project_member_list where project_number = #{no}
+	</delete>
+	
+	<insert id="projectMemberAdd">
+		INSERT into project_member_list(company_id,project_number) values(#{company_id}, #{project_number})
+	</insert>
+	
+	<select id="projectMemberSearchCount" resultType="int">
+		SELECT count(*) from project_member_list where company_id = #{company_id} and project_number = #{project_number}
+	</select>
+	
+	<delete id="pmExclude">
+		DELETE from project_member_list where company_id = #{company_id} and project_number = #{project_number}
+	</delete>
+	
+	<select id="getEmployeeList" resultType="com.project.dto.LoginDto">
+		SELECT * from company_member order by position_rank desc
+	</select>
+	
+	<select id="getDepartmentList" resultType="com.project.dto.DepartmentDto">
+		SELECT * from department_list
+	</select>
+	
+	<insert id="addDepartment">
+		INSERT into department_list(department_name) values(#{name})
+	</insert>
+	
+	<delete id="deleteEmployee">
+		DELETE from company_member where company_id = #{id}
+	</delete>
+	
+	<update id="departmentMemberAdd">
+		UPDATE company_member set department_no = #{department_no} where company_id = #{company_id}
+	</update>
+	
+	<update id="emExclude">
+		UPDATE company_member set department_no = 0 where company_id = #{id}
+	</update>
+	
+	<update id="changePosition">
+		UPDATE company_member set position_rank = #{position_rank} where company_id = #{company_id}
+	</update>
+	
+	<delete id="deleteDepartment">
+		DELETE from department_list where no = #{no}
+	</delete>
+	
+	<update id="departmentReset">
+		UPDATE company_member set department_no = 0 where department_no = #{no}
+	</update>
+	
+	<update id="departmentLeader">
+		UPDATE department_list set team_leader = #{team_leader} where no = #{no}
+	</update>
+</mapper>	

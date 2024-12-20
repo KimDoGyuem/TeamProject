@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.PjBoardMapper">
+
+	<insert id="write">
+		INSERT into company_board(company_id, cb_title, cb_text, cb_category) values(#{company_id}, #{cb_title}, #{cb_text}, #{cb_category})
+	</insert>
+	
+	<select id="getPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_category = #{category}
+	</select>
+	
+	<select id="read" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_no = #{no}
+	</select>
+	<update id="hitsUp">
+		UPDATE company_board set cb_hits = cb_hits+1 where cb_no = #{no}
+	</update>
+	
+	<insert id="commentsWrite">
+		INSERT into company_board(cb_comment_no, company_id, cb_comment_text) values(#{cb_comment_no}, #{company_id}, #{cb_comment_text})
+	</insert>
+</mapper>

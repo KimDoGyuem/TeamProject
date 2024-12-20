@@ -1,0 +1,90 @@
+#board_page{
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#left_box{
+    background-color: rgb(200, 200, 200);
+    width: 250px;
+    min-height: 100vh;
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#center_box{
+    background-color: rgb(200, 200, 200);
+    width: 1000px;
+    min-height: 100vh;
+    margin: 20px 10px;
+}
+.category_box{
+    cursor: pointer;
+    margin: 5px;
+}
+.category_box:hover {
+    color: rgb(50, 50, 255); /* 마우스를 올렸을 때 글씨 색상 */
+}
+/* 여기까지 Board.js */
+#board_get_list_page{
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#list_box{
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+td{
+    border: solid 1px black;
+}
+#post_title_link{
+    cursor: pointer;
+}
+#post_title_link:hover{
+    color: rgb(50, 50, 255); 
+}
+/* 여기까지 BoardGetList.js */
+#board_write_page{
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#write_box{
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* 여기까지 BoardWrite.js */
+#board_read_page{
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#read_box{
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+/* 여기까지 BoardWrite.js */
