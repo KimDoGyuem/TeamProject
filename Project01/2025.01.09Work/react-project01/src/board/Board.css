@@ -1,0 +1,178 @@
+#board_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left_box {
+    background-color: rgb(200, 200, 200);
+    width: 250px;
+    min-height: 100vh;
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#center_box {
+    background-color: rgb(200, 200, 200);
+    width: 1000px;
+    min-height: 100vh;
+    margin: 20px 10px;
+}
+
+.category_box {
+    cursor: pointer;
+    margin: 5px;
+}
+
+.category_box:hover {
+    color: rgb(50, 50, 255);
+    /* 마우스를 올렸을 때 글씨 색상 */
+}
+#free_board_box{
+    background-color: rgb(230, 230, 230);
+    width: 400px;
+    margin: 20px 10px;
+    
+}
+#hits_board_box{
+    background-color: rgb(230, 230, 230);
+    width: 400px;
+    margin: 20px 10px;
+}
+/* 여기까지 Board.js */
+#board_get_list_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#list_box {
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+
+td {
+    border: solid 1px black;
+}
+
+#post_title_link {
+    cursor: pointer;
+}
+
+#post_title_link:hover {
+    color: rgb(50, 50, 255);
+}
+
+
+/* 페이징블럭 css */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.page-item {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.page-link {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.page-link.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+/* 페이징블럭 css */
+
+
+/* 여기까지 BoardGetList.js */
+#board_write_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#write_box {
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 여기까지 BoardWrite.js */
+#board_read_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#read_box {
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+
+/* 여기까지 BoardWrite.js */
+#board_modify_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#modify_box {
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* 여기까지 BoardModify.js */
+#board_management_page{
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#management_box{
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+/* 여기까지 BoardManagement.js */
