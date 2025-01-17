@@ -1,0 +1,53 @@
+#company_site {
+    min-height: 100vh;
+}
+
+#main_top_box {
+    background-color: rgb(255, 146, 146);
+    display: flex;
+}
+
+#main_middle_box {
+    background-color: rgb(168, 220, 100);
+    display: flex;
+}
+
+#main_bottom_box {
+    background-color: rgb(100, 172, 220);
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    min-height: 100vh;
+}
+
+#company_logo {
+    width: 300px;
+    height: 100px;
+    background-color: rgb(112, 188, 255);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+#login_box {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    right: 10px;
+    width: 150px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.active-button {
+    background-color: rgb(170, 170, 170);
+    color: white;
+    font-weight: bold;
+}

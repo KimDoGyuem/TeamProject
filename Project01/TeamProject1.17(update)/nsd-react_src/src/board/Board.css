@@ -1,0 +1,286 @@
+#board_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left_box {
+    background-color: rgb(200, 200, 200);
+    width: 250px;
+    min-height: 100vh;
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#center_box {
+    background-color: rgb(200, 200, 200);
+    width: 1000px;
+    min-height: 100vh;
+    margin: 20px 10px;
+}
+
+.category_box {
+    cursor: pointer;
+    margin: 5px;
+}
+
+.category_box:hover { 
+    color: rgb(50, 50, 255);
+    /* 마우스를 올렸을 때 글씨 색상 */
+}
+
+#free_board_box,
+#hits_board_box {
+    background-color: rgb(187, 185, 185); /* 각 박스의 배경색 */
+    width: 940px; /* 동일한 너비 */
+    height: 300px;
+    margin: 30px 30px; /* 동일한 바깥 여백 */
+    padding: 10px; /* 동일한 내부 여백 */
+    box-sizing: border-box; /* padding과 border를 width에 포함시킴 */
+}
+/* 여기까지 Board.js */
+#board_get_list_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#list_box {
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+
+td {
+    border: solid 1px black;
+}
+
+#post_title_link:hover { 
+    color: rgb(50, 50, 255);
+    cursor: pointer;
+}
+
+#notice_link:hover {             /* 공지 글 마우스로 올렸을 때 색깔 변화 css */
+    color: rgb(50, 50, 255);
+    cursor: pointer;
+}
+#post_title_b_link:hover {       /* 인기 글 마우스로 올렸을 때 색깔 변화 css */
+    color: rgb(50, 50, 255);
+    cursor: pointer;
+}
+
+
+/* 페이징블럭 css */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.page-item {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.page-link {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.page-link.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+/* 페이징블럭 css */
+
+
+/* 여기까지 BoardGetList.js */
+#board_write_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#write_box {
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 여기까지 BoardWrite.js */
+#board_read_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#read_box {
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+
+/* 여기까지 BoardWrite.js */
+#board_modify_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#modify_box {
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* 여기까지 BoardModify.js */
+#board_management_page{
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#management_box{
+    position: relative;
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+    
+}
+#category_management_box{
+    display: flex;
+}
+.category{
+    background-color: #7bc975;
+    border: 1px dashed rgb(70, 70, 70);
+    border-radius: 3px;
+    margin: 5px;
+}
+#button_box{
+    display: flex; /* 수평 정렬 */
+    justify-content: space-between; /* 두 요소를 좌우 끝으로 배치 */
+    align-items: center; /* 두 요소의 세로 정렬을 맞춤 */
+}
+#delete_button{
+    background-color: rgb(255, 100, 100);
+}
+#recover_button{
+    background-color: rgb(98, 198, 103);
+}
+.select_button{
+    background-color: rgb(170, 170, 170);
+    color: white;
+}
+/* 여기까지 BoardManagement.js */
+
+#free_board_box {
+        padding: 10px; /* 내부 여백을 10px로 설정하여 박스의 내용이 가장자리와 떨어지도록 함 */
+}
+
+.notice_item {
+    display: flex; /* Flexbox로 자식 요소를 가로로 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: flex-start; /* 자식 요소들을 왼쪽 정렬 */
+    padding: 5px 0; /* 항목의 상하 여백 */
+    border-bottom: 1px solid #ddd; /* 각 항목 아래에 밑줄 추가 */
+    flex-wrap: nowrap; /* 자식 요소가 줄 바꿈 없이 한 줄에 배치되도록 */
+    min-height: 5px; /* 최소 높이 설정 */
+    margin-bottom: 10px; /* 항목 간의 간격 */
+}
+
+.notice_label {
+    display: inline-block; /* 인라인 박스로 설정하여 텍스트 크기 조정 */
+    background-color: #f39c12; /* 배경색 설정 */
+    color: white; /* 글자 색상 */
+    font-size: 12px; /* 텍스트 크기 */
+    font-weight: bold; /* 굵게 설정 */
+    padding: 2px 6px; /* 텍스트 주위에 여백 추가 */
+    border-radius: 3px; /* 모서리 둥글게 */
+    margin-right: 10px; /* 공지 제목과 간격 추가 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    white-space: nowrap; /* 한 줄로 유지되도록 설정 */
+}
+
+#notice_link {
+    color: #000; /* 제목의 텍스트 색상 */
+    text-decoration: none; /* 제목의 밑줄 제거 */
+    flex-grow: 0; /* 제목이 고정된 크기를 유지 */
+    margin-right: 10px; /* 제목과 조회수 간의 간격 추가 */
+    overflow: hidden; /* 제목이 넘칠 경우 숨김 처리 */
+    text-overflow: ellipsis; /* 제목이 넘칠 경우 '...'로 표시 */
+    white-space: nowrap; /* 제목이 한 줄로 유지되도록 설정 */
+}
+
+.notice_hits {
+    color: #666; /* 텍스트 색상을 연한 회색으로 설정 */
+    font-size: 14px; /* 텍스트 크기를 14px로 설정 */
+    text-align: right; /* 텍스트를 오른쪽 정렬 */
+    margin-left: auto; /* 조회수를 오른쪽 끝으로 밀어내기 */
+    width: 50px; /* 조회수 영역의 고정된 폭 설정 */
+}
+
+/* 여기까지 Board.js- 공지 글 */
+.popular_item {
+    display: flex; /* Flexbox를 사용하여 자식 요소를 가로로 배치 */
+    align-items: center; /* 세로 방향으로 중앙 정렬 */
+    /* justify-content: space-between; 자식 요소 간의 공간을 양쪽 끝으로 배치 */
+    justify-content: flex-start; /* 자식 요소를 왼쪽 정렬 */
+    padding: 5px 0; /* 각 항목의 상하 여백을 5px로 설정 */
+    border-bottom: 1px solid #ddd; /* 각 항목 아래에 연한 회색의 밑줄을 추가 */
+    margin-bottom: 5px;
+}
+
+#post_title_b_link {
+    color: #000; /* 제목의 텍스트 색상 */
+    text-decoration: none; /* 제목의 밑줄 제거 */
+    flex-grow: 0; /* 제목이 고정된 크기를 유지 */
+    margin-right: 10px; /* 제목과 조회수 간의 간격 추가 */
+    overflow: hidden; /* 제목이 넘칠 경우 숨김 처리 */
+    text-overflow: ellipsis; /* 제목이 넘칠 경우 '...'로 표시 */
+    white-space: nowrap; /* 제목이 한 줄로 유지되도록 설정 */
+}
+
+
+.post_hits {
+    color: #666; /* 텍스트 색상을 연한 회색으로 설정 */
+    font-size: 14px; /* 텍스트 크기를 14px로 설정 */
+    text-align: right; /* 텍스트를 오른쪽 정렬 */
+    margin-left: auto; /* 조회수를 오른쪽 끝으로 밀어내기 */
+    width: 50px; /* 조회수 영역의 고정된 폭 설정 */
+}
+/* 여기까지 Board.js- 인기 글 */
