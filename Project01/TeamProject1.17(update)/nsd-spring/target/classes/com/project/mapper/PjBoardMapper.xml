@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.PjBoardMapper">
+
+	<insert id="write">
+		INSERT into company_board(company_id, company_name, cb_title, cb_text, cb_category) values(#{company_id}, #{company_name}, #{cb_title}, #{cb_text}, #{cb_category})
+	</insert>
+	
+	<select id="getPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_category = #{category} and cb_is_deleted = FALSE order by cb_no desc
+	</select>
+	
+	<select id="getSaerchPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_category = #{category} and cb_is_deleted = FALSE and ${searchTag} like CONCAT('%', #{searchWord}, '%') order by cb_no desc
+	</select>
+	
+	<select id="read" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_no = #{no}
+	</select>
+	<update id="hitsUp">
+		UPDATE company_board set cb_hits = cb_hits+1 where cb_no = #{no}
+	</update>
+	
+	<insert id="commentsWrite">
+		INSERT into company_board_comment(cb_comment_no, company_id, company_name, cb_comment_text) values(#{cb_comment_no}, #{company_id}, #{company_name}, #{cb_comment_text})
+	</insert>
+	
+	<select id="commentsRead" resultType="com.project.board.dto.CompanyBoardCommentDto">
+		SELECT * from company_board_comment where cb_comment_no = #{no} 
+	</select>
+	
+	<update id="deletePost">
+		UPDATE company_board set cb_is_deleted = true where cb_no = #{no}
+	</update>
+	
+	<update id="deleteComment">
+		UPDATE company_board_comment set cb_comment_is_deleted = true where comment_no = #{no}
+	</update>
+	
+	<update id="modifyPost">
+		UPDATE company_board set cb_title = #{cb_title}, cb_text = #{cb_text}, cb_date = now() where cb_no = #{cb_no}
+	</update>
+	
+	<select id="getAllPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board order by cb_no desc
+	</select>
+	
+	<select id="getCategoryAllPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_category = #{category} order by cb_no desc
+	</select>
+	
+	<select id="getDelPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_is_deleted = true order by cb_no desc
+	</select>
+	
+	<select id="getCategoryDelPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_is_deleted = true and cb_category = #{category} order by cb_no desc
+	</select>
+	
+	<select id="getSearchAllPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where ${searchTag} like CONCAT('%', #{searchWord}, '%') order by cb_no desc
+	</select>
+	
+	<select id="getCategorySearchAllPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_category = #{category} and ${searchTag} like CONCAT('%', #{searchWord}, '%') order by cb_no desc
+	</select>
+	
+	<select id="getSearchDelPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_is_deleted = true and ${searchTag} like CONCAT('%', #{searchWord}, '%') order by cb_no desc
+	</select>
+	
+	<select id="getCategorySearchDelPostList" resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * from company_board where cb_is_deleted = true and cb_category = #{category} and ${searchTag} like CONCAT('%', #{searchWord}, '%') order by cb_no desc
+	</select>
+	
+	<update id="recoverPost">
+		UPDATE company_board set cb_is_deleted = false where cb_no = #{postNo}
+	</update> 
+	
+	<delete id="dataBaseDelPost">
+		DELETE from company_board where cb_no = #{postNo}
+	</delete>
+	
+	<insert id="addCategory">
+		INSERT into company_board_category(cb_category_name) values(#{name})
+	</insert>
+	
+	<select id="categoryList" resultType="com.project.board.dto.CompanyBoardCategoryDto">
+		SELECT * from company_board_category	
+	</select>
+	
+	<delete id="deleteCategory">
+		DELETE from company_board_category where cb_category_name = #{name}
+	</delete>
+	
+	<delete id="deleteCategoryPosts">
+		DELETE from company_board where cb_category = #{name}
+	</delete>
+	
+	<!-- 	게시판 메인 페이지 상단 공지 글, 인기 글 -->
+	<!-- 공지 글 조회 -->
+	<select id="selectTopPostsByCategory"
+		resultType="com.project.board.dto.CompanyBoardDto">
+		SELECT * FROM company_board WHERE cb_category = '공지' AND cb_is_deleted = FALSE ORDER BY cb_no
+		DESC LIMIT #{limit}
+	</select>
+
+	<!-- 인기 글 조회 -->
+   <select id="selectTopPostsByHits"
+      resultType="com.project.board.dto.CompanyBoardDto">
+      SELECT * FROM company_board WHERE cb_is_deleted = FALSE AND cb_category != '공지' ORDER BY cb_hits DESC LIMIT #{limit}
+   </select>
+	
+</mapper>
