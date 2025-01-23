@@ -1,0 +1,460 @@
+#board_page {
+    background-color: rgb(230, 230, 230);
+    width: 1359px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left_box {
+    background-color: rgb(200, 200, 200);
+    width: 250px;
+    min-height: 100vh;
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#center_box {
+    background-color: rgb(200, 200, 200);
+    width: 1000px;
+    min-height: 100vh;
+    margin: 20px 10px;
+}
+
+.category_box {
+    cursor: pointer;
+    margin: 5px;
+}
+
+.category_box:hover { 
+    color: rgb(50, 50, 255);
+    /* 마우스를 올렸을 때 글씨 색상 */
+}
+
+#free_board_box,
+#hits_board_box {
+    background-color: rgb(180, 180, 180); /* 각 박스의 배경색 */
+    width: 940px; /* 동일한 너비 */
+    height: 300px;
+    margin: 30px 30px; /* 동일한 바깥 여백 */
+    padding: 10px; /* 동일한 내부 여백 */
+    box-sizing: border-box; /* padding과 border를 width에 포함시킴 */
+}
+
+/* 수민작업 */
+#free_board_box {
+    padding: 10px; /* 내부 여백을 10px로 설정하여 박스의 내용이 가장자리와 떨어지도록 함 */
+}
+
+.notice_item {
+display: flex; /* Flexbox로 자식 요소를 가로로 배치 */
+align-items: center; /* 세로 중앙 정렬 */
+justify-content: flex-start; /* 자식 요소들을 왼쪽 정렬 */
+padding: 5px 0; /* 항목의 상하 여백 */
+border-bottom: 1px solid #ddd; /* 각 항목 아래에 밑줄 추가 */
+flex-wrap: nowrap; /* 자식 요소가 줄 바꿈 없이 한 줄에 배치되도록 */
+min-height: 5px; /* 최소 높이 설정 */
+margin-bottom: 10px; /* 항목 간의 간격 */
+}
+
+.notice_label {
+display: inline-block; /* 인라인 박스로 설정하여 텍스트 크기 조정 */
+background-color: #f39c12; /* 배경색 설정 */
+color: white; /* 글자 색상 */
+font-size: 12px; /* 텍스트 크기 */
+font-weight: bold; /* 굵게 설정 */
+padding: 2px 6px; /* 텍스트 주위에 여백 추가 */
+border-radius: 3px; /* 모서리 둥글게 */
+margin-right: 10px; /* 공지 제목과 간격 추가 */
+text-align: center; /* 텍스트 중앙 정렬 */
+white-space: nowrap; /* 한 줄로 유지되도록 설정 */
+}
+
+#notice_link {
+color: #000; /* 제목의 텍스트 색상 */
+text-decoration: none; /* 제목의 밑줄 제거 */
+flex-grow: 0; /* 제목이 고정된 크기를 유지 */
+margin-right: 10px; /* 제목과 조회수 간의 간격 추가 */
+overflow: hidden; /* 제목이 넘칠 경우 숨김 처리 */
+text-overflow: ellipsis; /* 제목이 넘칠 경우 '...'로 표시 */
+white-space: nowrap; /* 제목이 한 줄로 유지되도록 설정 */
+}
+
+.notice_hits {
+color: #666; /* 텍스트 색상을 연한 회색으로 설정 */
+font-size: 14px; /* 텍스트 크기를 14px로 설정 */
+text-align: right; /* 텍스트를 오른쪽 정렬 */
+margin-left: auto; /* 조회수를 오른쪽 끝으로 밀어내기 */
+width: 50px; /* 조회수 영역의 고정된 폭 설정 */
+}
+
+/* 여기까지 Board.js- 공지 글 */
+.popular_item {
+display: flex; /* Flexbox를 사용하여 자식 요소를 가로로 배치 */
+align-items: center; /* 세로 방향으로 중앙 정렬 */
+/* justify-content: space-between; 자식 요소 간의 공간을 양쪽 끝으로 배치 */
+justify-content: flex-start; /* 자식 요소를 왼쪽 정렬 */
+padding: 5px 0; /* 각 항목의 상하 여백을 5px로 설정 */
+border-bottom: 1px solid #ddd; /* 각 항목 아래에 연한 회색의 밑줄을 추가 */
+margin-bottom: 5px;
+}
+
+#post_title_b_link {
+color: #000; /* 제목의 텍스트 색상 */
+text-decoration: none; /* 제목의 밑줄 제거 */
+flex-grow: 0; /* 제목이 고정된 크기를 유지 */
+margin-right: 10px; /* 제목과 조회수 간의 간격 추가 */
+overflow: hidden; /* 제목이 넘칠 경우 숨김 처리 */
+text-overflow: ellipsis; /* 제목이 넘칠 경우 '...'로 표시 */
+white-space: nowrap; /* 제목이 한 줄로 유지되도록 설정 */
+}
+
+
+.post_hits {
+color: #666; /* 텍스트 색상을 연한 회색으로 설정 */
+font-size: 14px; /* 텍스트 크기를 14px로 설정 */
+text-align: right; /* 텍스트를 오른쪽 정렬 */
+margin-left: auto; /* 조회수를 오른쪽 끝으로 밀어내기 */
+width: 50px; /* 조회수 영역의 고정된 폭 설정 */
+}
+/* 여기까지 Board.js- 인기 글 */
+/* 수민작업 여기까지 */
+
+/* 여기까지 Board.js */
+#board_get_list_page {
+    background-color: rgb(230, 230, 230);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#list_box {
+    background-color: rgb(200, 200, 200);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+
+#post_title_link:hover { 
+    color: rgb(50, 50, 255);
+    cursor: pointer;
+}
+
+#notice_link:hover {             /* 공지 글 마우스로 올렸을 때 색깔 변화 css */
+    color: rgb(50, 50, 255);
+    cursor: pointer;
+}
+#post_title_b_link:hover {       /* 인기 글 마우스로 올렸을 때 색깔 변화 css */
+    color: rgb(50, 50, 255);
+    cursor: pointer;
+}
+
+
+/* 페이징블럭 css */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.page-item {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.page-link {
+    width: auto;
+    padding: 8px 16px;
+    border: 1px solid #c0c0c0;
+    background-color: #f9f9f9;
+    border-radius: 9px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-link.active {
+    width: auto;
+    background-color: rgb(25, 25, 25);
+    color: white;
+    border: 1px solid rgb(25, 25, 25);
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* 페이징블럭 css */
+
+
+/* 여기까지 BoardGetList.js */
+#board_write_page {
+    background-color: rgb(230, 230, 230);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#write_box {
+    background-color: rgb(255, 255, 255);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+/* BoardModify와 공유중 */
+#form_area_box{
+    width: auto;
+    border: 1px solid rgb(170, 170, 170);
+    border-top: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* BoardModify와 공유중 */
+#registration_button{
+    cursor: pointer;
+    width: 70px;
+    height: 35px;
+    background-color: rgb(245, 245, 245);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(25, 25, 25);
+    font-weight: bold;
+    border-radius: 7px;
+    margin: 3px;
+}
+/* BoardModify와 공유중 */
+#cancell_button{
+    cursor: pointer;
+    width: 70px;
+    height: 35px;
+    background-color: rgb(50, 50, 50);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(25, 25, 25);
+    font-weight: bold;
+    border-radius: 7px;
+    margin: 3px;
+}
+/* 여기까지 BoardWrite.js */
+#board_modify_page {
+    background-color: rgb(230, 230, 230);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#modify_box {
+    background-color: rgb(255, 255, 255);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+/* 여기까지 BoardModify.js */
+#board_read_page {
+    background-color: rgb(230, 230, 230);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#read_box {
+    background-color: rgb(255, 255, 255);
+    width: 1250px;
+    min-height: 100vh;
+    margin: 20px;
+    padding: 0px 10px;
+}
+#text_box{
+    height: auto;
+    min-height: 300px;
+    border-top: 3px solid black;
+    border-bottom: 1px solid black;
+    margin: 20px 0px;
+    padding: 20px 0px;
+}
+#delete_comment_box{
+    
+}
+#comment_box{
+    display: flex;
+}
+.read_buttons{
+    margin-right: 10px;
+}
+/* 여기까지 BoardRead.js */
+#board_management_page{
+    background-color: rgb(230, 230, 230);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#management_box{
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    width: 1270px;
+    min-height: 100vh;
+    margin: 20px;
+}
+#category_management_box{
+    margin: 20px 5px;
+}
+#category_list_box{
+    display: flex;
+}
+.category{
+    height: 30px;
+    background-color: rgb(200, 200, 200);
+    border: 1px dashed rgb(25, 25, 25);
+    border-radius: 7px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+#category_delete_button{
+    cursor: pointer;
+    margin: 3px;
+}
+#button_box{
+    display: flex; /* 수평 정렬 */
+    justify-content: space-between; /* 두 요소를 좌우 끝으로 배치 */
+    align-items: center; /* 두 요소의 세로 정렬을 맞춤 */
+}
+#delete_button{
+    cursor: pointer;
+    height: 35px;
+    background-color: rgb(170, 170, 170);
+    border: 2px solid rgb(25, 25, 25);
+    border-radius: 7px;
+    font-weight: bold;
+    margin: 3px;
+    position: relative;
+    top: 1px;
+}
+#delete_logo{
+    height: 20px;
+    margin-left: 4px;
+    position: relative;
+    top: 4px;
+    /* 다른 버전 */
+    /* cursor: pointer;
+    height: 35px;
+    margin-left: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 9px; */
+}
+#recover_button{
+    cursor: pointer;
+    height: 35px;
+    background-color: rgb(170, 170, 170);
+    border: 2px solid rgb(25, 25, 25);
+    border-radius: 7px;
+    font-weight: bold;
+    margin: 3px;
+    position: relative;
+    top: 1px;
+}
+#recover_logo{
+    height: 20px;
+    margin-left: 4px;
+    position: relative;
+    top: 4px;
+    /* 다른 버전 */
+    /* cursor: pointer;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    top: 9px; */
+}
+.select_button{
+    cursor: pointer;
+    height: 35px;
+    background-color: rgb(50, 50, 50);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(25, 25, 25);
+    font-weight: bold;
+    border-radius: 7px;
+    margin: 3px;
+}
+.unSelect_button{
+    cursor: pointer;
+    height: 35px;
+    background-color: rgb(230, 230, 230);
+    color: rgb(25, 25, 25);
+    border: 1px solid rgb(25, 25, 25);
+    border-radius: 7px;
+    margin: 3px;
+}
+#management_table {
+    border-collapse: collapse; /* 테이블 경계선 병합 */
+    width: 100%; /* 테이블 전체 너비 */
+}
+.td1{
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #000000;
+    border-bottom: 1px solid #000000; /* 가로줄 유지 */
+    border-right: none; /* 세로줄 제거 */
+    font-weight: bold;
+}
+.td1_title{
+    padding: 10px;
+    border-top: 2px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-right: none; 
+    font-weight: bold;
+}
+.td2{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* 가로줄 유지 */
+    border-right: none; /* 세로줄 제거 */
+}
+.td3{
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* 가로줄 유지 */
+    border-right: none; /* 세로줄 제거 */
+}
+
+#form_select{
+    height: 31px;
+}
+.form_input{
+    height: 25px;
+}
+.form_button{
+    cursor: pointer;
+    height: 31px;
+    position: relative;
+    top: 2px;
+}
+#search_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+}
+/* 여기까지 BoardManagement.js */
+
+
+
+
+
+
+
+
+

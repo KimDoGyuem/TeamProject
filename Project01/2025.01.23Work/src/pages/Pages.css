@@ -1,0 +1,182 @@
+#login_page {
+    background-color: rgb(255, 255, 255);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 여기까지 LoginPage.js */
+#project_history_page{
+    background-color: rgb(230, 230, 230);
+    width: 1359px;
+}
+#stem_box{
+    position: relative;
+    left: 150px;
+    top: 100px;
+}
+#stem_body{
+    display: flex;
+}
+#stem_head{
+    width: 120px;
+    height: 120px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+.stem_line{
+    width: 15px;
+    height: 170px;
+    background-color: black;
+    position: relative;
+    left: 50px;
+    bottom: 30px;
+}
+.branch{
+    width: 500px;
+    height: 5px;
+    background-color: black;
+    position: relative;
+    left: 40px;
+    bottom: 10px;
+}
+.leaf{
+    width: auto; 
+    padding: 0px 10px;
+    height: 70px; 
+    background: linear-gradient(to right, rgb(200, 200, 200) 1%, rgb(245, 245, 245) 29%); /* 좌->우 그라데이션 */
+    border-radius: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-left: 3px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 30px;
+    bottom: 20px;
+    font-size: 17px;
+}
+.project_end_date{
+    width: 380px; 
+    height: 30px;
+    padding: 2px 1px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 3px solid black;
+    position: relative;
+    left: 130px;
+    top: 57px;
+    font-size: 15px;
+}
+/* 여기까지 ProjectHistoryPage.js */
+#project_management_page {
+    background-color: rgb(230, 230, 230);
+    width: 1359px;
+}
+
+.pj_input {
+    width: 500px;
+}
+#project_management_list_area{
+    display: flex;
+    height: 150px;
+    padding: 4px;
+    border: 4px solid gray;
+}
+/* 여기까지 ProjectManagement.js */
+#employee_management_page {
+    background-color: rgb(230, 230, 230);
+    width: 1359px;
+}
+
+#employee_list_area {
+    display: flex;
+    height: 150px;
+    padding: 4px;
+    border: 4px solid gray;
+}
+
+#department_list{
+    padding: 5px;
+}
+
+#department_box{
+    display: flex;
+}
+
+#department_name{
+    width:  150px;
+    height: 150px;
+    background-color: rgb(136, 200, 255);
+    display: flex;
+    flex-direction: column; /* 세로 방향 배치 */
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#add_employees_box{
+    width: 250px;
+    height: 150px;
+    background-color: rgb(192, 209, 224);
+    margin: 10px;
+    padding: 5px;
+}
+/* 여기까지 EmployeeManagement.js */
+#organization_chart_page{
+    background-color: rgb(230, 230, 230);
+    width: 1359px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#company_name{
+    width:  300px;
+    height: 150px;
+    background-color: rgb(136, 200, 255);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#department_list_box{
+    display: flex;
+}
+#department_block{
+    margin: 30px;
+}
+#department_name{
+    width:  150px;
+    height: 150px;
+    background-color: rgb(136, 200, 255);
+    border-radius: 20px;
+}
+#department_member{
+    width:  150px;
+    height: 300px;
+    background-color: rgb(136, 200, 255);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 20px;
+}
+/* 여기까지 OrganizationChart.js */

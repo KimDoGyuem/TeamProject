@@ -1,0 +1,154 @@
+#company_site {
+    position: relative;
+    width: auto;
+    min-height: 100vh;
+    background-color: white;
+}
+
+#main_top_box {
+    /* background-color: rgb(255, 146, 146); */
+    display: flex;
+    align-items: center;
+}
+
+#main_middle_box {
+    /* background-color: rgb(168, 220, 100); */
+    display: flex;
+}
+
+#main_bottom_box {
+    /* background-color: rgb(100, 172, 220); */
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    min-height: 100vh;
+}
+
+#company_logo {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    width: 100px;
+    cursor: pointer;
+}
+
+#banner_box,
+#contents_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+#banner {
+    width: 100%;
+}
+
+#login_box {
+    background-color: rgb(230, 230, 230);
+    position: absolute;
+    right: 10px;
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_button {
+    margin: 5px;
+}
+
+.active-button {
+    background-color: rgb(170, 170, 170);
+    color: white;
+    font-weight: bold;
+}
+
+
+/* 상단 카테고리 스타일 */
+#main_category_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 50px;
+}
+
+.main_category {
+    position: relative;
+    font-size: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px;
+}
+
+.main_category:hover {
+    text-decoration: underline;
+    /* 마우스를 올렸을 때 밑줄 표시 */
+    text-decoration-thickness: 2px;
+    /* 밑줄 두께 증가 */
+    text-underline-offset: 5px;
+    /* 밑줄 거리 조절 */
+    cursor: pointer;
+}
+
+/* 드롭다운 메뉴 초기 상태 */
+.dropdown_menu {
+    position: absolute;
+    top: 100%;
+    /* 부모 요소 바로 아래 */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: max-content;
+    overflow: hidden;
+
+    height: 0;
+    /* 높이 0으로 숨김 */
+    opacity: 0;
+    /* 투명도 0으로 숨김 */
+    transition: height 0.3s ease, opacity 0.3s ease;
+    /* 부드럽게 트랜지션 */
+    z-index: 10;
+    /* 드롭다운 메뉴를 다른 요소보다 위에 표시 */
+}
+
+/* 드롭다운 활성화 상태 */
+.dropdown_menu.visible {
+    height: auto;
+    /* 높이를 내용에 맞게 자동으로 조정 */
+    opacity: 1;
+    /* 투명도 1로 표시 */
+}
+
+/* 드롭다운 옵션 스타일 */
+.dropdown_option {
+    padding: 10px 10px;
+    font-size: 20px;
+}
+
+.dropdown_option:hover {
+    font-weight: bold;
+}
+
+#scroll_to_top_button {
+    cursor: pointer;
+    position: fixed;
+    width: 90px;
+    bottom: 20px;
+    right: 50px;
+    opacity: 0.7;
+}
