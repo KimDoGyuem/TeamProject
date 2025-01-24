@@ -1,0 +1,298 @@
+/* 공통 컨테이너 스타일 */
+.issue-list-container, .issue-detail-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 헤더 스타일 */
+.issue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px 6px 0 0;
+}
+
+/* 필터 버튼 스타일 */
+.issue-filters {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-button {
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #24292f;
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: #f3f4f6;
+}
+
+/* 이슈 리스트 스타일 */
+.issue-list {
+    border: 1px solid #d0d7de;
+    border-radius: 0 0 6px 6px;
+}
+
+.issue-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    border-bottom: 1px solid #d0d7de;
+}
+
+.issue-item:last-child {
+    border-bottom: none;
+}
+
+.new-issue-button {
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #2da44e;
+    border: 1px solid rgba(27, 31, 36, 0.15);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* 이슈 상세 페이지 스타일 */
+.issue-title-section {
+    padding: 16px;
+}
+
+.issue-title-section h1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.issue-number {
+    color: #57606a;
+    font-weight: normal;
+}
+
+.issue-meta {
+    font-size: 12px;
+    color: #57606a;
+}
+
+.issue-status {
+    padding: 4px 8px;
+    border-radius: 16px;
+    margin-right: 8px;
+}
+
+.issue-status.open {
+    background-color: #2da44e;
+    color: white;
+}
+
+.issue-status.closed {
+    background-color: #8250df;
+    color: white;
+}
+
+/* 이슈 본문 스타일 */
+.issue-body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 24px;
+    padding: 16px;
+}
+
+.issue-main-content {
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+/* 댓글 스타일 */
+.comment-item {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.comment-header {
+    background-color: #f6f8fa;
+    padding: 8px 16px;
+    border-bottom: 1px solid #d0d7de;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-body {
+    padding: 16px;
+}
+
+.comment-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 8px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    resize: vertical;
+}
+
+/* 버튼 스타일 */
+.button-group {
+    display: flex;
+    gap: 8px;
+}
+
+.submit-button, .cancel-button {
+    padding: 5px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-button {
+    background-color: #2da44e;
+    color: white;
+    border: 1px solid rgba(27, 31, 36, 0.15);
+}
+
+.cancel-button {
+    background-color: #f6f8fa;
+    color: #24292f;
+    border: 1px solid #d0d7de;
+}
+
+/* 사이드바 스타일 */
+.issue-sidebar {
+    padding: 16px;
+}
+
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-button, .sidebar-openclose-button {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 1px solid #d0d7de;
+}
+
+.sidebar-button {
+    background-color: #f6f8fa;
+    color: #24292f;
+}
+
+.edit-button {
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #24292f;
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #f3f4f6;
+}
+
+.issue-form-header {
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.issue-form {
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.issue-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.issue-form-title {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.issue-form-label-select {
+    width: 200px;
+    padding: 5px 12px;
+    font-size: 14px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background-color: #f6f8fa;
+}
+
+.issue-form-description {
+    width: 100%;
+    min-height: 200px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.issue-form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.issue-form-submit {
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #2da44e;
+    border: 1px solid rgba(27, 31, 36, 0.15);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.issue-form-cancel {
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #24292f;
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    cursor: pointer;
+}
