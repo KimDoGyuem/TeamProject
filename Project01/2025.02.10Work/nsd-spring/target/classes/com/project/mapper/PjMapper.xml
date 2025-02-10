@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.mapper.PjMapper">
+	
+	<select id="login" resultType="int">
+		SELECT count(*) from company_member where company_id = #{company_id} and password = #{password}
+	</select>
+
+	<select id="onLogin" resultType="com.project.dto.LoginDto">
+		SELECT * from company_member where company_id = #{company_id} and password = #{password}
+	</select>
+	
+	<insert id="addProject">
+		INSERT into project_list(project_name,project_content,project_startDate,project_endDate) values(#{project_name}, #{project_content}, #{project_startDate}, #{project_endDate})
+	</insert>
+	
+	<!-- is_finished false인 프로젝트들만 출력 -->
+	<select id="getProjectList" resultType="com.project.dto.ProjectManagementDto">
+		SELECT 
+		    project_no,
+		    project_name,
+		    project_content,
+		    DATE_FORMAT(project_startDate, '%Y-%m-%d') as project_startDate,
+		    DATE_FORMAT(project_endDate, '%Y-%m-%d') as project_endDate,
+		    is_finished
+		FROM project_list where is_finished = false;
+	</select>
+	
+	<select id="getProjectMemberlist" resultType="com.project.dto.ProjectMemberDto">
+		SELECT * from project_member_list
+	</select>
+	
+	<!-- 기존 endProject1, 2로 나뉜 매퍼를 endProject하나만 남김 -->
+	<update id="endProject">
+		update project_list set is_finished = true where project_no = #{project_no}
+	</update>
+	
+	<!-- project_member_list에 종료된 프로젝트들을 걸러내기위한 매퍼 -->
+	<select id="endCheck" resultType = "int">
+		SELECT project_no from project_list where is_finished = true;
+	</select>
+	
+	<insert id="projectMemberAdd">
+		INSERT into project_member_list(company_id,project_no) values(#{company_id}, #{project_no})
+	</insert>
+	
+	<select id="projectMemberSearchCount" resultType="int">
+		SELECT count(*) from project_member_list where company_id = #{company_id} and project_no = #{project_no}
+	</select>
+	
+	<delete id="pmExclude">
+		DELETE from project_member_list where company_id = #{company_id} and project_no = #{project_no}
+	</delete>
+	
+	<select id="getEmployeeList" resultType="com.project.dto.LoginDto">
+		SELECT * from company_member where company_id != 'admin' order by position_rank asc
+	</select>
+	
+	<select id="getDepartmentList" resultType="com.project.dto.DepartmentDto">
+		SELECT * from department_list
+	</select>
+	
+	<insert id="addDepartment">
+		INSERT into department_list(department_name) values(#{name})
+	</insert>
+	
+	<delete id="deleteEmployee">
+		DELETE from company_member where company_id = #{id}
+	</delete>
+	
+	<insert id="addEmployee">
+		INSERT into company_member(company_name,company_id,position,p_rank) values(#{name}, #{company_id}, #{position}, #{p_rank})
+	</insert>
+	
+	<update id="departmentMemberAdd">
+		UPDATE company_member set department = #{department} where company_id = #{company_id}
+	</update>
+	
+	<update id="emExclude">
+		UPDATE company_member set department = '' where company_id = #{id}
+	</update>
+	
+	<update id="changePosition">
+		UPDATE company_member set position = #{position}, position_rank = #{position_rank} where company_id = #{company_id}
+	</update>
+	
+	<delete id="deleteDepartment">
+		DELETE from department_list where department_name = #{departmentName}
+	</delete>
+	
+	<update id="departmentReset">
+		UPDATE company_member set department = '' where department = #{departmentName}
+	</update>
+	
+	<update id="departmentLeader">
+		UPDATE department_list set team_leader = #{team_leader} where department_no = #{department_no}
+	</update>
+	
+	<update id="modifyMyPw">
+		update company_member set password = #{password} where company_id = #{company_id};
+	</update>
+	
+	<update id="modifyMyPP">
+		update company_member set profile_photo = #{profile_photo} where company_id = #{company_id};
+	</update>
+	
+	<select id="loginInfo" resultType="com.project.dto.LoginDto">
+		SELECT * from company_member where company_id = #{company_id}
+	</select>
+	
+	<!-- 이슈체크 매퍼 추가 -->
+	<select id="issueCheck" resultType = "int">
+		select count(*) from project_issue_list where issue_project_no = #{project_no}
+	</select>
+	
+	<!-- 겟이슈 매퍼 추가 -->
+	<select id="getIssue" resultType = "com.project.dto.IssueDto">
+		select * from project_issue_list where issue_project_no = #{pjNo}
+	</select>
+	
+	<!-- 겟이슈byIssueno 매퍼 추가 -->
+	<select id="getIssueByIssueNo" resultType = "com.project.dto.IssueDto">
+		select * from project_issue_list where issue_no = #{issueNo}
+	</select>
+	
+	<!-- 겟이슈코맨트 매퍼 추가 -->
+	<select id="getIssueComment" resultType = "com.project.dto.IssueCommentDto">
+		select * from project_issue_comment where comment_issue_no = #{issueNo}
+	</select>
+	
+	<!-- 이슈wirte 매퍼 추가 -->
+	<insert id="issueWrite">
+		insert into project_issue_list (issue_project_no, issue_title, issue_details, issue_label, issue_author) values(#{issue_project_no}, #{issue_title}, #{issue_details}, #{issue_label}, #{issue_author});
+	</insert>
+	
+	<!-- 이슈CommentWirte 매퍼 추가 -->
+	<insert id="issueCommentWrite">
+		insert into project_issue_comment (comment_issue_no, comment_text, comment_author) values(#{comment_issue_no}, #{comment_text}, #{comment_author});
+	</insert>
+	
+	<!-- 이슈close 매퍼 추가 -->
+	<update id="issueClose">
+		update project_issue_list set issue_is_closed = true, issue_closer = #{issue_closer}, issue_closedDatetime = now() where issue_no = #{issue_no};
+	</update>
+	
+	<!-- 이슈ReOpen 매퍼 추가 -->
+	<update id="issueReOpen">
+		update project_issue_list set issue_is_closed = false where issue_no = #{issueNo};
+	</update>
+	
+	<!-- 이슈Modify 매퍼 추가 -->
+	<update id="issueModify">
+		update project_issue_list set issue_title = #{issue_title}, issue_details = #{issue_details}, issue_label = #{issue_label} where issue_no = #{issue_no};
+	</update>
+	
+	<!-- 이슈CommentModify 매퍼 추가 -->
+	<update id="issueCommentModify">
+		update project_issue_comment set comment_text = #{comment_text} where comment_no = #{comment_no} 
+	</update>
+	
+	<select id="getEndProjectList" resultType="com.project.dto.ProjectManagementDto">
+		SELECT * from project_list where is_finished = true order by project_startDate
+	</select>
+</mapper>	
